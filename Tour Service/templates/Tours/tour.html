@@ -1,0 +1,44 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+        <!-- Explore Tour Start -->
+        <div class="container-fluid ExploreTour py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Explore Tour</h5>
+                    <h1 class="mb-4">The World</h1>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+                    </p>
+                </div>
+                <div class="tab-class text-center">
+                  
+                    <div class="tab-content">
+                        <div id="NationalTab-1" >
+                            <div class="row g-4">
+                                {% for tour in tours %}
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="national-item">
+                                        <img src={{tour.image.url}} class="img-fluid w-100 rounded" alt="Image">
+                                        <div class="national-content">
+                                            <div class="national-info">
+                                                {% if tour.offer_percent %}
+                                                <div class="tour-offer bg-info">{{tour.offer_percent}}% Off</div>
+                                                {% endif %}
+                                                <h5 class="text-white text-uppercase mb-2">{{tour}}</h5>
+                                                <a href={% url "Tours:tour_detail" tour.category.slug tour.slug %} class="btn-hover text-white">View Tour <i class="fa fa-arrow-right ms-2"></i></a>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore Tour Start -->
+        {% endblock body %}
+        

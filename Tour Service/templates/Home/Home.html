@@ -1,0 +1,42 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+{% load static %}
+
+
+<!-- Services Start -->
+<div class="container-fluid bg-light service py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Searvices</h5>
+            <h1 class="mb-0">Our Services</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    {% for category in categories  %}
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">{{category}} <a href={% url "Tours:tours" category.slug %} class="nav-item nav-link "></a></h5>
+                                <p class="mb-0">{{category.description}}
+                                
+                                
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-globe fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+{% endblock body %}
