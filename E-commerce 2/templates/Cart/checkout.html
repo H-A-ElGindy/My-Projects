@@ -1,0 +1,105 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+    <!-- Checkout Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-lg-8">
+                <form method="POST" >
+                    {% csrf_token %}
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span></h5>
+                    <div class="bg-light p-30 mb-5">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" placeholder="Enter your first name" name="f_name" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>Last Name</label>
+                            <input class="form-control" type="text" placeholder="Enter your last name" name="l_name" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" type="text" placeholder="Enter your Email" name="email" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>Mobile No</label>
+                            <input class="form-control" type="text" placeholder="Enter valid phone number" name="phone" required>  
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>Address Line 1</label>
+                            <input class="form-control" type="text" placeholder="Enter your 1st address" name="address1" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>Address Line 2</label>
+                            <input class="form-control" type="text" placeholder="Enter your 2nd address" name="address2">
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label>City</label>
+                            <input class="form-control" type="text" placeholder="Enter your city" name="city" required>
+                            </div>
+                                  
+                        </div> 
+                        <div class="bg-light p-30">
+                            <button type='submit' class="btn btn-block btn-primary font-weight-bold py-3" name='order' >Place Order</button>
+                        </div>  
+                    </div>
+                </form>
+                        
+                           
+                
+            </div>
+            
+            <div class="col-lg-4">
+                
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Order Total</span></h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom">
+                        
+                        
+                        <h6 class="mb-3">Products</h6>
+                        {% for cart_item in cart_items  %}
+                        <div class="d-flex justify-content-between">
+                            <p>{{cart_item}}</p>
+                            <p>{{cart_item.variations}}</p>
+                            <p>{{cart_item.quantity}}</p>
+                            <p>${{cart_item.product.pro_price}}</p>
+                        </div>
+                        {% endfor %}
+                      
+                    </div>
+                    <div class="border-bottom pt-3 pb-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Subtotal</h6>
+                            <h6>${{subtotal}}</h6>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6 class="font-weight-medium">Shipping</h6>
+                            <h6 class="font-weight-medium">${{shipping}}</h6>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6 class="font-weight-medium">Discount</h6>
+                            <h6 class="font-weight-medium">${{discount}}</h6>
+                        </div>
+                    </div>
+
+                   
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Total</h5>
+                            <h5>${{grand_total}}</h5>
+                        </div>
+                    </div>
+                </div>
+              
+                    
+            </div>
+        </div>
+    </div>
+    <!-- Checkout End -->
+{% endblock body %}
+
+
+
+   

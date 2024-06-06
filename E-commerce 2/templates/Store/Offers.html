@@ -1,0 +1,54 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+
+<div class="fashion_section">
+   <div id="main_slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container">
+               <div class="fashion_section_2">
+                  <div class="row">
+                     {% for offer in offers %}
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="box_main">
+                           <h4 class="shirt_text">{{offer.product}}</h4>
+
+                           {% if offer.offer_price %}
+                           <h5>${{offer.offer_price}}</h5><h6 class="text-muted ml-2"><del>${{offer.product.pro_price}}</del></h6>
+                           <div>
+                               <h6>Save{{offer.offer_percent}}%</h6>
+                           </div>
+                           {% endif %}
+
+                           <div class="tshirt_img"><img src={{offer.product.pro_image.url}}></div>
+                           <div class="btn_main">
+                              <div class="seemore_bt"><a href={{offer.product.get_url}}>See More</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+        
+         
+      </div>
+      {% if offers.has_other_pages %}
+      {% if offers.has_previous %}
+      <a class="carousel-control-prev" href="?page={{offers.previous_page_number}}" role="button" data-slide="prev">
+      <i class="fa fa-angle-left"></i>
+      </a>
+      {% endif %}
+      {% if offers.has_next %}
+      <a class="carousel-control-next" href="?page={{offers.next_page_number}}" role="button" data-slide="next">
+      <i class="fa fa-angle-right"></i>
+      </a>
+      {% endif %}
+      {% endif %}
+   </div>
+</div>
+
+ 
+ {% endblock body %}

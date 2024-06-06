@@ -1,0 +1,57 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+
+<div class="fashion_section">
+   <div id="main_slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container">
+               <div class="fashion_section_2">
+                  <div class="row">
+                     <h1 class="fashion_taital">{{subcategory}}</h1>
+                     {% for product in products %}
+                     <div class="col-lg-4 col-sm-4">
+                        <div class="box_main">
+                           <h4 class="shirt_text">{{product}}</h4>
+
+                           {% if product.pro_offer_price %}
+                           <h5>${{product.pro_offer_price}}</h5><h6 class="text-muted ml-2"><del>${{product.pro_price}}</del></h6>
+                           <div>
+                               <h6>Save{{product.pro_offer_percent}}%</h6>
+                           </div>
+                           {% else %}
+                           <h5>${{product.pro_price}}</h5>
+                           {% endif %}
+
+                           <div class="tshirt_img"><img src={{product.pro_image.url}}></div>
+                           <div class="btn_main">
+                              <div class="seemore_bt"><a href={{product.get_url}}>See More</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+        
+         
+      </div>
+      {% if products.has_other_pages %}
+      {% if products.has_previous %}
+      <a class="carousel-control-prev" href="?page={{products.previous_page_number}}" role="button" data-slide="prev">
+      <i class="fa fa-angle-left"></i>
+      </a>
+      {% endif %}
+      {% if products.has_next %}
+      <a class="carousel-control-next" href="?page={{products.next_page_number}}" role="button" data-slide="next">
+      <i class="fa fa-angle-right"></i>
+      </a>
+      {% endif %}
+      {% endif %}
+   </div>
+</div>
+
+ 
+ {% endblock body %}
