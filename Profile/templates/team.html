@@ -1,0 +1,154 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Blog Start -->
+    <div class="container-fluid py-5" >
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Blog list Start -->
+                <div class="col-lg-8">
+                    <div class="row g-5">
+
+                        <!-- Coach card start -->
+
+                        <div class="col-lg-6" >
+                            <div class=" bg-light rounded overflow-hidden">
+                                <div class="team-img position-relative" style="max-height:300px;overflow:hidden;">
+                                    <a href="coach_details.html" ><img class="img-fluid w-100" src="img/1.jpg" alt=""></a>
+                                </div>
+                                <div class="text-start px-3 py-4">
+                                    <a href="coach_details.html"><h4 class="text-primary">Full Name</h4></a>
+                                    <div class="d-flex justify-content-between">
+                                        <span><h6 class="text-uppercase m-0">Designation</h6></span>
+                                        <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                                    </div>
+                                    <div class="pt-3" style="max-height:140px ;">
+                                        <p style="overflow:hidden">Lorem ipsum dolor sit amet consectetur, adipisicing. Perspiciatis magnam, nihil et a saepe totam debitis voluptatibus.</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Coach card end -->
+
+                        <div class="col-lg-6" >
+                            <div class=" bg-light rounded overflow-hidden">
+                                <div class="team-img position-relative" style="max-height:300px;overflow:hidden;">
+                                    <a href="coach_details.html" ><img class="img-fluid w-100" src="img/IMG_1496.heic" alt=""></a>
+                                </div>
+                                <div class="text-start px-3 py-4">
+                                    <a href="coach_details.html"><h4 class="text-primary">Full Name</h4></a>
+                                    <div class="d-flex justify-content-between">
+                                        <span><h6 class="text-uppercase m-0">Designation</h6></span>
+                                        <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                                    </div>
+                                    <div class="pt-3" style="max-height:140px ;">
+                                        <p style="overflow:hidden">Lorem ipsum dolor sit amet consectetur, adipisicing. Perspiciatis magnam, nihil et a saepe totam debitis voluptatibus.</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6" >
+                            <div class=" bg-light rounded overflow-hidden">
+                                <div class="team-img position-relative" style="max-height:300px;overflow:hidden;">
+                                    <a href="coach_details.html" ><img class="img-fluid w-100" src="img/3.jpg" alt=""></a>
+                                </div>
+                                <div class="text-start px-3 py-4">
+                                    <a href="coach_details.html"><h4 class="text-primary">Full Name</h4></a>
+                                    <div class="d-flex justify-content-between">
+                                        <span><h6 class="text-uppercase m-0">Designation</h6></span>
+                                        <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                                    </div>
+                                    <div class="pt-3" style="max-height:140px ;">
+                                        <p style="overflow:hidden">Lorem ipsum dolor sit amet consectetur, adipisicing. Perspiciatis magnam, nihil et a saepe totam debitis voluptatibus.</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6" >
+                            <div class=" bg-light rounded overflow-hidden">
+                                <div class="team-img position-relative" style="max-height:300px;overflow:hidden;">
+                                    <a href="coach_details.html" ><img class="img-fluid w-100" src="img/4.jpg" alt=""></a>
+                                </div>
+                                <div class="text-start px-3 py-4">
+                                    <a href="coach_details.html"><h4 class="text-primary">Full Name</h4></a>
+                                    <div class="d-flex justify-content-between">
+                                        <span><h6 class="text-uppercase m-0">Designation</h6></span>
+                                        <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                                    </div>
+                                    <div class="pt-3" style="max-height:140px ;">
+                                        <p style="overflow:hidden">Lorem ipsum dolor sit amet consectetur, adipisicing. Perspiciatis magnam, nihil et a saepe totam debitis voluptatibus.</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog list End -->
+    
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <!-- Search Form Start -->
+                    <div class="mb-5">
+                        <div class="input-group">
+                            <form method="GET" action="">
+                                {% csrf_token %}
+                                <input type="text" class="form-control bg-white p-3" style="color:black" placeholder="Keyword">
+                                <button type="submit" class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Search Form End -->
+                    
+                    <!-- Recent Post Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Recent Post</h3>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Recent Post End -->
+
+                    <!-- Tags Start -->
+                    <div class="mb-5" >
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Tags</h3>
+                        </div>
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-light m-1">Tag 1</a>
+                            <a href="" class="btn btn-light m-1">Tag 2</a>
+                            <a href="" class="btn btn-light m-1">Tag 3</a>
+                            <a href="" class="btn btn-light m-1">Tag 4</a>
+                            <a href="" class="btn btn-light m-1">Tag 5</a>
+                            <a href="" class="btn btn-light m-1">Tag 6</a>
+                        </div>
+                    </div>
+                    <!-- Tags End -->
+                    
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+    
+{% endblock content %}

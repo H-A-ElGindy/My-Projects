@@ -1,0 +1,7 @@
+{% extends "base/auth_base.html" %}
+{% load static %}
+{% block content %}
+<h3> Password Reset Complete</h3>
+<p> password reset success you may log in </p>
+<a href= {% url "accounts:login_view" %}>Login</a>
+{% endblock %}

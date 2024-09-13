@@ -1,0 +1,93 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="py-3 px-3 mb-3" style="background-color: var(--bs-light);">
+                <div class="row g-5">
+                    <div class="col-lg-4 pro-photo" style="overflow:hidden;">
+                        
+                        <!-- IF THE PROFILE IS LOGGED IN, HIS PHOTO WILL BE DIPLAYED.
+                        OTHERWISE, DEFAULT PHOTO.-->
+                        
+                        {% if profile.image %}
+                        <img class="img-fluid w-100 rounded" src="{{profile.image.url}}" alt="">
+                        {% else %}
+                        <img class="img-fluid w-100 rounded" src="{% static 'img/logo 1.png' %}" alt="">
+                        {% endif %}
+                        
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center" style="max-height:300px;overflow:hidden;">
+                        <div class="text-start px-3 pb-4">
+                            {% if not profile.first_name  or not profile.last_name  %}
+                            <h4 class=" display-3 text-primary">{{profile.user.username}}</h4>
+                            {% else %}
+                            <h4 class=" display-3 text-primary">{{profile.first_name}}{{profile.last_name}}</h4>
+                            {% endif %}
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-uppercase m-0">{{profile.designation}}</h6></span>
+                                <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-muted m-0">{{profile.phone}}</h6></span>
+                            </div>
+                            <div class="py-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href={{profile.facebook}}><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href={{profile.linkedin}}><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center" style="max-height:300px;overflow:hidden;">
+                        <div class="row g-4 d-flex justify-content-center align-items-center">
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:reset_email" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-lock pe-2"></i>Reset Password</a>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:edit_profile" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-pen-to-square pe-2"></i>Edit Profile</a>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:logout" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-arrow-right-from-bracket pe-2"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 px-4">
+                <div class="col-lg-8">
+                    <div class="row g-5 d-flex justify-content-center align-items-center pt-3">
+                        <div class="col-lg-12 py-3" style="background-color: var(--bs-light);">
+                            <h4 class=" display-3 py-2">Upload Post</h4>
+                            <form method="POST"action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <input type="text" name="title" class="form-control border-2 px-4" placeholder="Title" style="height: 55px;">
+                                    </div>
+                                    <div class="col-12">
+                                        <h4 class="text-muted">Attach File</h4>
+                                        <input type="file" name="file" class="form-control pt-3 border-2 px-4" placeholder="Your Image" style="height: 55px;">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control border-2 px-4" name="description" rows="5" placeholder="Description"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Apply Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    
+{% endblock content %}

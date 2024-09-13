@@ -1,0 +1,132 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Blog Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="py-3 px-3 mb-3" style="background-color: var(--bs-light);">
+                <div class="row g-5">
+                    <div class="col-lg-4 pro-photo" style="overflow:hidden;">
+                        
+                        <!-- IF THE PROFILE IS LOGGED IN, HIS PHOTO WILL BE DIPLAYED.
+                        OTHERWISE, DEFAULT PHOTO.-->
+                        
+                        {% if profile.image %}
+                        <img class="img-fluid w-100 rounded" src="{{profile.image.url}}" alt="">
+                        {% else %}
+                        <img class="img-fluid w-100 rounded" src="{% static 'img/logo 1.png' %}" alt="">
+                        {% endif %}
+                        
+                        
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center" style="max-height:300px;overflow:hidden;">
+                        <div class="text-start px-3 pb-4">
+                            {% if not profile.first_name  or not profile.last_name  %}
+                            <h4 class=" display-3 text-primary">{{profile.user.username}}</h4>
+                            {% else %}
+                            <h4 class=" display-3 text-primary">{{profile.first_name}}{{profile.last_name}}</h4>
+                            {% endif %}
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-uppercase m-0">{{profile.designation}}</h6></span>
+                                <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>{{profile.average_rating}}</h6></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-muted m-0">{{profile.phone}}</h6></span>
+                            </div>
+                            <div class="py-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href={{profile.facebook}}><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href={{profile.linkedin}}><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center" style="max-height:300px;overflow:hidden;">
+                        <div class="row g-4 d-flex justify-content-center align-items-center">
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:reset_email" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-lock pe-2"></i>Reset Password</a>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:edit_profile" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-pen-to-square pe-2"></i>Edit Profile</a>
+                            </div>
+                            
+                            <div class="col-12 d-flex justify-content-start card align-items-center text-start px-3 w-75 border-0 border-dark" style="background: none;">
+                                <a href={% url "accounts:logout" %} class="btn btn-lg btn-primary rounded px-md-5 me-3 w-100" style="color:white"><i class="fa-solid fa-arrow-right-from-bracket pe-2"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <h1 class="mb-4">Biography</h1>
+                        {% if profile.biography %}
+                        <p>{{profile.biography}}</p>
+                        {% else %}
+                        <p>Enter your biography</p>
+                        {% endif %}
+                    </div>
+                    <!-- Blog Detail End -->
+    
+                    <!-- Comment List Start -->
+                    <div class="mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">2 Reviews</h3>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comment List End -->
+                </div>
+    
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+    
+                    <!-- Recent Post Start -->
+                    <div class="mb-5">
+                        <div class="section-title section-title-sm d-flex justify-content-between align-items-center position-relative pb-3 mb-4">
+                            <h3 class="mb-0 mt-2">Popular Posts</h3>
+                            <a href={% url "accounts:upload_post" %} class="" style="font-size: 40px;">+</a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Recent Post End -->
+    
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+{% endblock content %}

@@ -1,0 +1,153 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="py-3 px-3 mb-3" style="background-color: var(--bs-light);">
+                <div class="row g-5">
+                    <div class="col-lg-4 pro-photo" style="overflow:hidden;">
+                        <img class="img-fluid w-100 rounded" src="img/blog-1.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center" style="max-height:300px;overflow:hidden;">
+                        <div class="text-start px-3 pb-4">
+                            <h4 class=" display-3 text-primary">Full Name</h4>
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-uppercase m-0">Designation</h6></span>
+                                <span class="d-flex justify-content-start "><h6><i class="fa-solid fa-star pe-2"></i>0.0</h6></span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span><h6 class="text-muted m-0">Phone Number</h6></span>
+                            </div>
+                            <div class="py-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <h1 class="mb-4">Biography</h1>
+                        <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut
+                            magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet
+                            amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at
+                            sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et
+                            aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren
+                            sit stet no diam kasd vero.</p>
+                        <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores
+                            vero stet consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit
+                            nonumy kasd diam dolores, sanctus lorem kasd duo dolor dolor vero sit et. Labore
+                            ipsum duo sanctus amet eos et. Consetetur no sed et aliquyam ipsum justo et,
+                            clita lorem sit vero amet amet est dolor elitr, stet et no diam sit. Dolor erat
+                            justo dolore sit invidunt.</p>
+                    </div>
+                    <!-- Blog Detail End -->
+    
+                    <!-- Comment List Start -->
+                    <div class="mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">2 Reviews</h3>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                
+                            </div>
+                        </div>
+                        <!-- <div class="d-flex ms-5 mb-4">
+                            <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
+                            <div class="ps-3">
+                                <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
+                                <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
+                                    accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
+                                
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- Comment List End -->
+    
+                    <!-- Comment Form Start -->
+                    <div class="bg-light rounded p-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Leave A Review</h3>
+                        </div>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="First Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Last Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" min="1" max="5" class="form-control border-0" placeholder="Your Rating" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" rows="5" placeholder="Comment"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Review</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Comment Form End -->
+                </div>
+    
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+    
+                    <!-- Recent Post Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Popular Posts</h3>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Recent Post End -->
+    
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    
+{% endblock content %}
