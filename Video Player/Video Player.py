@@ -1,7 +1,7 @@
 import cv2  
 
 # video resized for 1920 * 1080 (my screen) , you can adjust width and height as desired
-cap = cv2.VideoCapture("C:/Users/aelgi/Downloads/test.mp4")  
+cap = cv2.VideoCapture("your video")  
 desired_width = 1920 
 desired_height = 1080 
 
