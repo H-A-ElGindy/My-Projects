@@ -1,6 +1,3 @@
-import cv2
-import numpy as np
-
 import cv2  
 
 # video resized for 1920 * 1080 (my screen) , you can adjust width and height as desired
