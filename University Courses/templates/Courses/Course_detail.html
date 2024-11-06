@@ -29,7 +29,7 @@
                   <img src={{course.image.url}} alt=""></a>
                 </div>
                 <div class="down-content">
-                  <a href="meeting-details.html"><h4>{{course}}</h4></a>
+                  <a href={% url "Apply:application" %}><h4>{{course}}</h4></a>
                   <p class="description">
                     {{course.description}}
                   </p>
