@@ -1,0 +1,77 @@
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-style{
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
+.students-cards{
+  margin: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+}
+
+.single-card{
+  background-color: rgb(72, 115, 207);
+  width:fit-content;
+  padding:10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.counter{
+  margin: 20px;
+  background-color: rgb(72, 115, 207);
+  width: fit-content;
+  padding: 5px;
+  text-align: center;
+  color:whitesmoke; 
+  border-radius: 10px; 
+  font-size: larger;
+  .control{
+    display:flex;
+    gap:20px;
+    padding: 5px;
+  }
+  button{
+    font-size: x-large;
+    padding: 5px 10px;
+    background-color:rgb(72, 115, 207); 
+    color:whitesmoke; 
+    border-style: none;
+
+  }
+  
+}
+
+.visit{
+  margin: 20px;
+  background-color: rgb(72, 115, 207);
+  width: fit-content;
+  padding: 10px;
+  text-align: center;
+  color:whitesmoke; 
+  border-radius: 7px; 
+  font-size: larger;
+}
+
+nav{
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+  a{
+    text-decoration: none;
+    color: whitesmoke;
+    background-color:rgb(72, 115, 207) ;
+    padding: 7px;
+    border-radius: 5px;
+  }
+}
