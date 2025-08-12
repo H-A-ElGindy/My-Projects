@@ -1,0 +1,233 @@
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-container{
+    margin-bottom: 15px;
+    color: rgb(5, 5, 105);
+    hr{
+        
+        opacity: 50%;
+        color: black;
+        margin: 0 20px;
+    }
+}
+.upper-nav,.lower-nav{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: space-evenly;  
+}
+
+.upper-right-nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .currency-select{
+        select{
+            cursor: pointer;
+            font-size: 15px;
+            border: none;
+            width: auto;
+
+           
+        }
+    }
+}
+.country-select{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;   
+}
+
+.country-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    
+}
+
+.selected-country{
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width:max-content;
+    z-index: 10;
+    li{
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+select:focus {
+  outline: none;
+}
+
+
+.country-selector{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img{
+        display: block;
+    }
+}
+
+
+.upper-left-nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    span{
+        cursor: pointer;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(5, 5, 105);
+        &:hover{
+            color: red;
+            transition: all 0.2s;
+        }
+    }
+    .compare{
+        display: flex;
+        gap: 10px;
+        &:hover{
+            color: red;
+            transition: all 0.2s;
+        }
+    }
+    .wish{
+        &:hover{
+            color: red;
+            transition: all 0.2s;
+        }
+    }
+}
+
+.brand-title{
+    display:flex;
+    gap:15px;
+    align-items: center;
+}
+
+
+
+
+.pages-routing{
+    display: flex;
+    gap: 20px;
+    a{
+        text-decoration: none;
+        color: rgb(5, 5, 105); 
+    }
+    a:hover{
+        color: red;
+        transition: all 0.2s;
+    }
+}
+
+
+.pages-routing-2{
+    
+    display: none ;   
+}
+
+.search-cart-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    .cart-container{
+        
+       &>a{
+        text-decoration: none;
+        display: flex;
+        #num{
+            font-size: 15px;
+            background-color: red;
+            height: fit-content;
+            margin-left: -8px;
+            margin-top: -3px;
+            color:white ;
+            padding:0.2px 0.4px;
+            
+        }
+       }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .pages-routing-2{
+        display:flex;
+        flex-direction: column;
+        
+        .menu{
+            .dropdown{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                background-color: blue;
+                
+            &:hover{
+            cursor: pointer;
+            } 
+        }   
+            &:hover .dropdown_menu li{
+                display: block;
+            }
+        }
+        .linkslist{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding:5px 10px;
+            position: absolute;
+            top: 100%;
+            background-color: white;
+            
+
+            li{
+                padding: 15px 5px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;    
+                }
+                a:hover{
+                    color: red;
+                    transition: all 0.2s;
+                }
+            }
+        }
+
+        button{
+            background-color: white;
+            border-style:solid;
+            padding: 5px;
+            width: 38px;
+            border-width: 0.03px;
+            border-color: rgba(128, 128, 128, 0.521);
+            cursor: pointer;
+        
+        }
+    }
+    .pages-routing{
+        display: none;
+    }
+    .lower-nav,.upper-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

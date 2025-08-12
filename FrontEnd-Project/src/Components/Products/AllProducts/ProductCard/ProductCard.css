@@ -1,0 +1,53 @@
+.product-card{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    
+    .img-container {
+        margin-bottom: 20px;
+        img {
+        display: block;
+        height: auto; 
+        width: auto; 
+        max-width: 300px; 
+        max-height: 300px;
+        } 
+    }
+   
+    .text-container{
+        h3{
+            margin-bottom: 20px;
+        }
+        margin-bottom: 20px;
+    
+    }
+   
+    .btn-price-rate-container{
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .price-rate-container,.btn-container{
+            display: flex;
+            gap: 100px;
+        }
+       
+        button{
+            cursor: pointer;
+            border: none;
+            outline: none;
+            color:blue;
+            background-color: white;
+            font-size: 18px;
+            &:hover{
+                color: red;
+            }
+            
+        }
+    }
+    
+}

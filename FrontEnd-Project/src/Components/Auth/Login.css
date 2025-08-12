@@ -1,0 +1,83 @@
+.login-container{
+    width:25%;
+    margin:auto;
+    background-color: white;
+    padding:35px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+       
+        color: rgba(33, 33, 185, 0.822);
+        .email-container,.password-container{
+            display: flex;
+            flex-direction: column;
+            gap:5px;
+            &>input{
+                padding: 10px;
+                border-radius: 5px;
+                border-style: solid;
+                border-color: rgba(128, 128, 128, 0.548);
+                border-width: 1px;
+                font-size: medium;
+           
+            }
+            ::placeholder{
+                padding:10px 5px;
+                font-size: medium;
+            }
+            input:focus{
+                border-color: red;
+                outline: none;
+            }
+        }
+        .remember-forget{
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #login{
+            margin-top: 20px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: large;
+            color: white;
+            background-color: rgba(160, 20, 20, 0.767);
+            border-style: none;
+            border-radius: 5px;
+            
+        }
+    }
+    .create-account{
+        padding-top: 10px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    .login-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        form{
+            .email-container,.password-container{
+                width:100%;
+                input{
+                    width:100%;
+                }
+            }
+            .remember-forget{
+                display: flex;
+                flex-direction: column;
+                gap:5px;
+                align-items: center;
+            }
+        }
+    }
+    
+}
