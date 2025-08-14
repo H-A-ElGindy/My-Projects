@@ -2,6 +2,7 @@ import  { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import axios from "axios"
 import"../SingleProduct/SingleProduct.css"
+import { Link } from 'react-router-dom';
 
 const SingleProduct = () => {
   const [product,Setproduct]=useState({})

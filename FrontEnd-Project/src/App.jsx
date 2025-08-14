@@ -21,14 +21,13 @@ function App() {
     
     <>
       
-        <Navbar />
+      <Navbar />
 
       <Routes>
         <Route path='/' Component={Home}/>
         <Route path='/login' Component={Login}/>
         <Route path='/products' Component={Products}/>
         <Route path='/product-details/:id' Component={SingleProduct}/>
-        <Route path='/cart' Component={Cart} />
         <Route path='/cart' Component={Cart} />
         <Route path='*' Component={NotFound}/>
       </Routes>

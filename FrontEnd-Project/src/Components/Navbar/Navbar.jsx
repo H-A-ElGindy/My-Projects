@@ -12,16 +12,17 @@ import {  useEffect, useState } from "react"
 
 const Navbar = () => {
     
+  
     // To Sync number of items in cart 
-    
     const [cartCount, setCartCount] = useState(() => {
     const cart = JSON.parse(localStorage.getItem('cart') || []);
     return cart.length;
     });
 
+
     useEffect(() => {
     const updateCartCount = () => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('cart') || []);
     setCartCount(cart.length);
   };
 
